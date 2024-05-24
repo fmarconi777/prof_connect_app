@@ -16,6 +16,7 @@ import jakarta.validation.Valid;
 @RequestMapping("/app/studentsignup")
 public class StudentSignupController {
     private final StudentService studentService;
+
     public StudentSignupController(StudentService studentService) {
         this.studentService = studentService;
     }
@@ -23,6 +24,7 @@ public class StudentSignupController {
     @PostMapping
     public ResponseEntity<String> signup(@RequestBody @Valid StudentDTO studentDTO) {
         User student = studentService.fromDTO(studentDTO);
+        student = studentService.signupStudent(student);
         return ResponseEntity.ok("token");
     }
 }
