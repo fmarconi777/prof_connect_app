@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.profeconnect.domain.entity.User;
 import com.profeconnect.dto.StudentDTO;
+import com.profeconnect.service.AuthenticationService;
 import com.profeconnect.service.StudentService;
 
 import jakarta.validation.Valid;
@@ -16,15 +17,18 @@ import jakarta.validation.Valid;
 @RequestMapping("/app/studentsignup")
 public class StudentSignupController {
     private final StudentService studentService;
+    private final AuthenticationService authenticationService;
 
-    public StudentSignupController(StudentService studentService) {
+    public StudentSignupController(StudentService studentService, AuthenticationService authenticationService) {
         this.studentService = studentService;
+        this.authenticationService = authenticationService;
     }
 
     @PostMapping
     public ResponseEntity<String> signup(@RequestBody @Valid StudentDTO studentDTO) {
         User student = studentService.fromDTO(studentDTO);
         student = studentService.signupStudent(student);
-        return ResponseEntity.ok("token");
+        String token = authenticationService.auth(student.getEmail(), student.getPassword());
+        return ResponseEntity.ok(token);
     }
 }
