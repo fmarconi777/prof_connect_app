@@ -1,7 +1,9 @@
 package com.profeconnect.domain.entity;
 
 import java.util.Date;
+import java.util.UUID;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,47 +12,49 @@ import jakarta.persistence.Id;
 @Entity(name = "user")
 public class User {
     @Id @GeneratedValue(strategy = GenerationType.UUID)
-    private String usuario_ID;
-    private String nome;
+    @Column(name = "user_id")
+    private UUID userId;
+    private String Name;
     private String password;
-    private Date data_nascimento;
+    @Column(name = "birth_date")
+    private Date birthDate;
     private String email;
-    private String sexo;
-    private String nome_responsável;
-    private String cpf;
-    private String funcao_id;
-    private Boolean ativo;
+    private String sex;
+    private String guardianName;
+    private String cpf;    
+    private String role;
+    private Boolean active;
 
     public User() {
         
     }
     
-    public User(String nome, String password, Date data_nascimento, String email, String sexo,
-            String nome_responsável, String cpf, String funcao_id) {
-        this.nome = nome;
-        this.data_nascimento = data_nascimento;
+    public User(String Name, String password, Date birthDate, String email, String sex,
+            String guardianName, String cpf, String role) {
+        this.Name = Name;
+        this.birthDate = birthDate;
         this.email = email;
-        this.sexo = sexo;
-        this.nome_responsável = nome_responsável;
+        this.sex = sex;
+        this.guardianName = guardianName;
         this.cpf = cpf;
-        this.funcao_id = funcao_id;
-        this.ativo = true;
+        this.role = role;
+        this.active = true;
     }
 
-    public String getUsuario_ID() {
-        return usuario_ID;
+    public UUID getUserId() {
+        return userId;
     }
 
-    public void setUsuario_ID(String usuario_ID) {
-        this.usuario_ID = usuario_ID;
+    public void setUserId(UUID userId) {
+        this.userId = userId;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return Name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String Name) {
+        this.Name = Name;
     }    
 
     public String getPassword() {
@@ -61,12 +65,12 @@ public class User {
         this.password = password;
     }
 
-    public Date getData_nascimento() {
-        return data_nascimento;
+    public Date getBirthDate() {
+        return birthDate;
     }
 
-    public void setData_nascimento(Date data_nascimento) {
-        this.data_nascimento = data_nascimento;
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
     public String getEmail() {
@@ -77,20 +81,20 @@ public class User {
         this.email = email;
     }
 
-    public String getSexo() {
-        return sexo;
+    public String getSex() {
+        return sex;
     }
 
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 
-    public String getNome_responsável() {
-        return nome_responsável;
+    public String getGuardianName() {
+        return guardianName;
     }
 
-    public void setNome_responsável(String nome_responsável) {
-        this.nome_responsável = nome_responsável;
+    public void setGuardianName(String guardianName) {
+        this.guardianName = guardianName;
     }
 
     public String getCpf() {
@@ -101,27 +105,27 @@ public class User {
         this.cpf = cpf;
     }
 
-    public String getFuncao_id() {
-        return funcao_id;
+    public String getRole() {
+        return role;
     }
 
-    public void setFuncao_id(String funcao_id) {
-        this.funcao_id = funcao_id;
+    public void setRole(String role) {
+        this.role = role;
     }
 
-    public Boolean getAtivo() {
-        return ativo;
+    public Boolean getActive() {
+        return active;
     }
 
-    public void setAtivo(Boolean ativo) {
-        this.ativo = ativo;
+    public void setActive(Boolean active) {
+        this.active = active;
     }
 
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((usuario_ID == null) ? 0 : usuario_ID.hashCode());
+        result = prime * result + ((userId == null) ? 0 : userId.hashCode());
         return result;
     }
 
@@ -134,10 +138,10 @@ public class User {
         if (getClass() != obj.getClass())
             return false;
         User other = (User) obj;
-        if (usuario_ID == null) {
-            if (other.usuario_ID != null)
+        if (userId == null) {
+            if (other.userId != null)
                 return false;
-        } else if (!usuario_ID.equals(other.usuario_ID))
+        } else if (!userId.equals(other.userId))
             return false;
         return true;
     }
