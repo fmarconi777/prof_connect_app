@@ -2,6 +2,7 @@ package com.profeconnect.dto;
 
 import java.util.Date;
 
+import org.hibernate.validator.constraints.br.CPF;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.validation.constraints.Email;
@@ -32,9 +33,9 @@ public class StudentDTO {
             String email,
             @NotEmpty(message = "Sex cannot be empty")
             String sex,
-            @NotEmpty(message = "Guardian name cannot be empty")
             String guardianName,
             @NotEmpty(message = "CPF cannot be empty")
+            @CPF
             String cpf,
             @NotEmpty(message = "Password cannot be empty")
             String password,
