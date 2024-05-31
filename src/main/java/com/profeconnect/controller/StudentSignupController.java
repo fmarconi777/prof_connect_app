@@ -1,5 +1,6 @@
 package com.profeconnect.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,6 +20,7 @@ public class StudentSignupController {
     private final StudentService studentService;
     private final AuthenticationService authenticationService;
 
+    @Autowired
     public StudentSignupController(StudentService studentService, AuthenticationService authenticationService) {
         this.studentService = studentService;
         this.authenticationService = authenticationService;
