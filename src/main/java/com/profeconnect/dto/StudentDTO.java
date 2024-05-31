@@ -5,6 +5,8 @@ import java.util.Date;
 import org.hibernate.validator.constraints.br.CPF;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.profeconnect.dto.exception.PasswordConfirmationException;
+
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 
@@ -114,6 +116,13 @@ public class StudentDTO {
 
     public void setPasswordConfirmation(String passwordConfirmation) {
         this.passwordConfirmation = passwordConfirmation;
+    }
+
+    public void passwordCompare(){
+        if(password != passwordConfirmation){
+            throw new PasswordConfirmationException();
+        }
+
     }
 
     
