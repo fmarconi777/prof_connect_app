@@ -49,7 +49,11 @@
     <li>
       <a href="#about-the-project">Sobre o projeto</a>
       <ul>
+        <li><a href="#built-with">Problema e Solução</a></li>
         <li><a href="#built-with">Construído com</a></li>
+        <li><a href="#built-with">Princípios</a></li>
+        <li><a href="#built-with">Padrões de projeto</a></li>
+        <li><a href="#built-with">Metodologias e Designs</a></li>
       </ul>
     </li>
     <li>
@@ -76,7 +80,7 @@
 
 O presente projeto tem como objetivo desenvolver um Produto Mínimo Viável (MVP) para uma API de um Web Service de agendamento de aulas particulares. Este MVP servirá como base para a construção de uma plataforma completa que conectará alunos e professores, facilitando o processo de agendamento e acompanhamento de aulas.
 
-Problema e Solução
+### Problema e Solução
 
 A plataforma de ensino particular atual enfrenta diversos desafios, como:
 
@@ -89,8 +93,6 @@ A API de agendamento de aulas particulares visa solucionar esses problemas, ofer
 - <strong>Centraliza a comunicação</strong>: Alunos e professores podem se comunicar através da plataforma, compartilhando informações sobre as aulas e materiais de estudo.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 ### Construído com
 
@@ -106,9 +108,48 @@ A API de agendamento de aulas particulares visa solucionar esses problemas, ofer
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![JQuery][JQuery.com]][JQuery-url] -->
 
+
+### Princípios
+
+O projeto obedece, sempre que possível, aos seguintes princípios:
+
+<ol>
+  <li> <strong><i>SOLID:</i></strong>
+    <ul>
+      <li>Single Responsibility Principle (SRP)</li>
+      <li>Open Closed Principle (OCP)</li>
+      <li>Liskov Substitution Principle (LSP)</li>
+      <li>Interface Segregation Principle (ISP)</li>
+      <li>Dependency Inversion Principle (DIP)</li>
+    </ul>
+  <li><strong>Don't Repeat Yourself (DRY)</strong></li>
+  <li><strong>You Aren't Gonna Need It (YAGNI)</strong></li>
+  <li><strong>Keep It Simple, Silly (KISS)</strong></li>
+  <li><strong>Small Commits</strong></li>
+</ol>
+
+### Padrões de projeto
+
+O projeto implementa os seguintes padrões de projeto:
+
+<ol>
+  <li> <strong>Adapter</strong>    
+  <li><strong>Dependency Injection</strong></li>
+  <li><strong>Builder</strong></li>
+</ol>
+
+### Metodologias e Designs
+
+O projeto implementa as seguintes metodologias:
+
+<ol>
+  <li> <strong>Clean Architecture</strong>    
+  <li><strong>Conventional Commits</strong></li>
+  <li><strong>Modular Design</strong></li>
+  <li><strong>Use Cases</strong></li>
+</ol>
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- GETTING STARTED -->
 ## Como começar
