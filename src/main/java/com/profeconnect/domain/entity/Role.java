@@ -8,12 +8,10 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Role {
-
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "role_id", unique = true)
     private Long roleId;
-
     private String name;
 
     public Role() {
@@ -85,5 +83,4 @@ public class Role {
             return roleId;
         }
     }
-
 }

@@ -10,8 +10,7 @@ import com.profeconnect.dto.StudentDTO;
 import com.profeconnect.repository.RoleRepository;
 
 @Service
-public class StudentService {
-    
+public class StudentService {    
     private final RoleRepository roleRepository;
     
     public StudentService(RoleRepository roleRepository) {
@@ -23,11 +22,8 @@ public class StudentService {
         return usuraio;
     }
 
-    public User fromDTO(StudentDTO student) {
-        
-        
+    public User fromDTO(StudentDTO student) {     
         student.passwordCompare();
-
         Optional<Role> studentRole = roleRepository.findByRolename("student");
         User user = new User(
             student.getName(), 
@@ -40,6 +36,5 @@ public class StudentService {
             studentRole.get()
             );
         return user;
-
     }
 }
